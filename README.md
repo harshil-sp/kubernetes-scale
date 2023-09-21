@@ -24,4 +24,26 @@ echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 kubectl version --client
-  
+
+# AWS EKS Cluster Auto Scalling
+
+1. **Command**: `eksctl create cluster --name eks-demo-cluster`
+    - **Description**: Create an Amazon EKS cluster named "eks-demo-cluster."
+2. **Command**: `kubectl get deployment metric-server -n kube-system`
+    - **Description**: Retrieve information about the "metric-server" deployment in the "kube-system" namespace.
+3. **Command**: `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
+    - **Description**: Deploy the Metrics Server for Kubernetes from a YAML configuration file.
+4. **Command**: `kubectl get deployment metrics-server -n kube-system`
+    - **Description**: Retrieve information about the "metric-server" deployment in the "kube-system" namespace.
+5. **Command**: `kubectl apply -f https://k8s.io/examples/application/php-apache.yaml`
+    - **Description**: Deploy the PHP Apache application from a YAML configuration file.
+6. **Command**: `kubectl get all`
+    - **Description**: List all Kubernetes resources in the current context and namespace.
+7. **Command**: `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- <http://php-apache>; done"`
+    - **Description**: Run a load generator using a busybox container to continuously access the "php-apache" service.
+8. **Command**: `kubectl get hpa`
+    - **Description**: Get Horizontal Pod Autoscalers (HPA) in the current context and namespace.
+9. **Command**: `kubectl get rs`
+    - **Description**: Get ReplicaSets (RS) in the current context and namespace.
+10. **Command**: `kubectl get pods`
+    - **Description**: Get pods in the current context and namespace.
