@@ -39,7 +39,7 @@ kubectl version --client
     - **Description**: Deploy the PHP Apache application from a YAML configuration file.
 6. **Command**: `kubectl get all`
     - **Description**: List all Kubernetes resources in the current context and namespace.
-7. **Command**: `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- <http://php-apache>; done"`
+7. **Command**: `kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"`
     - **Description**: Run a load generator using a busybox container to continuously access the "php-apache" service.
 8. **Command**: `kubectl get hpa`
     - **Description**: Get Horizontal Pod Autoscalers (HPA) in the current context and namespace.
