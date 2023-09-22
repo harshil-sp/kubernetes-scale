@@ -47,7 +47,4 @@ kubectl version --client
     - **Description**: Get ReplicaSets (RS) in the current context and namespace.
 10. **Command**: `kubectl get pods`
     - **Description**: Get pods in the current context and namespace.
-   
-AKIAS3XBDZLSBIQYXCPL
-KGGD5jKFs48unNlNt/tGz+r7xIbDKQgbwQfLplYY
 
