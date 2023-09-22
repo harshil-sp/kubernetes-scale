@@ -29,7 +29,7 @@ kubectl version --client
 
 1. **Command**: `eksctl create cluster --name eks-demo-cluster`
     - **Description**: Create an Amazon EKS cluster named "eks-demo-cluster."
-2. **Command**: `kubectl get deployment metric-server -n kube-system`
+2. **Command**: `kubectl get deployment metrics-server -n kube-system`
     - **Description**: Retrieve information about the "metric-server" deployment in the "kube-system" namespace.
 3. **Command**: `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
     - **Description**: Deploy the Metrics Server for Kubernetes from a YAML configuration file.
